@@ -1,3 +1,11 @@
+# wapuu-bot - WordCamp Miami Slack Bot
+
+This repo contains the code for a Slack Bot User app that can be added to a Slack team/channel to respond to Slack events.
+
+[Botkit core from howdy.ai](https://github.com/howdyai/botkit/blob/master/docs/readme.md#developing-with-botkit) - was used as a framework and we added conntroller actions to respond to specific events from our Slack team.
+
+Use the instructions below for setting up and configuring this botkit project.
+
 # Botkit Starter Kit for Slack Bots
 
 This repo contains everything you need to get started building a Slack bot with [Botkit](https://botkit.ai) and [Botkit Studio](https://botkit.ai).
