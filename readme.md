@@ -2,7 +2,7 @@
 
 This repo contains the code for a Slack Bot User app that can be added to a Slack team/channel to respond to Slack events.
 
-[Botkit core from howdy.ai](https://github.com/howdyai/botkit/blob/master/docs/readme.md#developing-with-botkit) - was used as a framework and we added conntroller actions to respond to specific events from our Slack team.
+[Botkit core from howdy.ai](https://github.com/howdyai/botkit/blob/master/docs/readme.md#developing-with-botkit) - was used as a framework and we added conntroller actions to respond to specific events from our Slack team. We did not use Botkit Studio.
 
 Use the instructions below for setting up and configuring this botkit project.
 
