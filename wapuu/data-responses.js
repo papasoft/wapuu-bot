@@ -11,7 +11,7 @@ var links = {
   saturdayGuide: "https://2018.miami.wordcamp.org/saturday/",
   sundayGuide: "https://2018.miami.wordcamp.org/sunday/",
   saturdayParty: "https://2018.miami.wordcamp.org/saturday-party/",
-  googleMap: "https://maps.google.com/maps?ll=25.75806,-80.377022&z=18&t=m&hl=en-US&gl=US&mapclient=embed&daddr=FIU%20College%20of%20Business%20Complex%2011200%20SW%208th%20St%20Miami%2C%20FL%2033174@25.7580596,-80.377022",
+  googleMap: "https://goo.gl/maps/erK3PX5p4jo",
   googleMapThursday: "https://goo.gl/maps/wcKrae7Ubg52",
   saturdayVenueMap: "https://2018.miami.wordcamp.org/files/2018/03/venue_map_sat-2-768x497.jpg",
   sundayVenueMap: "https://2018.miami.wordcamp.org/files/2018/03/venue_map_sun-1-768x497.jpg",
@@ -92,7 +92,7 @@ module.exports = {
         }
 
       return {
-            text: emergencyNotice + regText + mapText,
+            text: regText + mapText,
             unfurl_links: false,
             unfurl_media: false
         };
@@ -100,21 +100,14 @@ module.exports = {
 
     directionsReply: function () {
             
-      var reply = "Here is an updated "
-        + slackLink('https://goo.gl/maps/jmuxVkJjEaR2', 'Google map to the 117th Ave/17th St entrance to FIU for directions')
-        + ". Remember to "
-        + slackLink(links.parking, 'register your vehicle here')
-        + " before coming to campus. ";
-
-      /*
       var reply = "Here is a "
         + slackLink(links.googleMap, 'Google map to FIU with directions')
         + ". Remember to "
         + slackLink(links.parking, 'register your vehicle here')
         + " before coming to campus. ";
-      */
+
       return {
-            text: emergencyNotice + reply,
+            text: reply,
             unfurl_links: false,
             unfurl_media: false
         };
@@ -187,13 +180,7 @@ module.exports = {
         "attachments": [
             {
                 "fallback": "WordCamp Miami Schedule Links",
-                "pretext": "WordCamp Miami Schedule Links (click the title)",
-                "title": "Friday",
-                "title_link": links.scheduleFriday,
-                "text": "Beginner's (RB 120)\nE-commerce (CBC 155)\nDevelopers (CBC 232)",
-                "color": "#7CD197"
-            },
-            {
+                "pretext": "Ya tu sabes\n\nWordCamp Miami Schedule Links (click the title)",
                 "title": "Saturday",
                 "title_link": links.scheduleSaturday,
                 "text": "How To (CBC 155)\nDesign & Community (RDB 1100)/nDeveloper (CBC 232)",
@@ -208,7 +195,7 @@ module.exports = {
             {
                 "title": "Sunday - E-commerce & Users",
                 "title_link": links.scheduleSundayUsers,
-                "text": "nE-Commerce & Users (CBC 232)",
+                "text": "E-Commerce & Users (CBC 232)",
                 "color": "#D2691E"
             },
             {
@@ -225,17 +212,7 @@ module.exports = {
         "attachments": [
             {
                 "fallback": "WordCamp Miami 2018 Food Schedule",
-                "pretext": "Food",
-                "title": "Thursday",
-                "text": "7pm - Meetup - Pizza",
-                "color": "#7CD197"
-            },
-            {
-                "title": "Friday",
-                "text": "Morning - coffee (no food)\n11:15am Lunch - Wraps\nAfternoon - coffee",
-                "color": "#800000"
-            },
-            {
+                "pretext": "Food. Pero que rrrrrico",
                 "title": "Saturday",
                 "text": "Morning - bagels, coffee, some fruit\n11:45am Lunch - BBQ chicken/ribs, salad, veg options\nAfternoon - CHURROS boi! + coffee\nAfter Party at Chili's",
                 "color": "#ff00ff"
@@ -251,25 +228,10 @@ module.exports = {
         "attachments": [
             {
                 "fallback": "WordCamp Miami 2018 Links",
-                "pretext": "WordCamp Miami 2018 Links",
+                "pretext": "Ya tu sabes\n\nWordCamp Miami 2018 Links",
                 "title": "Complete Schedule",
                 "title_link": links.schedule,
                 "color": "#7CD197"
-            },
-            {
-                "title": "Friday - Beginner's Workshop Guide",
-                "title_link": links.fridayBeginners,
-                "color": "#00CED1"
-            },
-            {
-                "title": "Friday - E-Commerce Workshop Guide",
-                "title_link": links.fridayEcommerce,
-                "color": "#800000"
-            },
-            {
-                "title": "Friday - Developers Workshop Guide",
-                "title_link": links.fridayDevelopers,
-                "color": "#ff00ff"
             },
             {
                 "title": "Saturday Guide",
