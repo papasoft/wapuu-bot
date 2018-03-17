@@ -4,6 +4,26 @@ This repo contains the code for a Slack Bot User app that can be added to a Slac
 
 [Botkit core from howdy.ai](https://github.com/howdyai/botkit/blob/master/docs/readme.md#developing-with-botkit) - was used as a framework and we added conntroller actions to respond to specific events from our Slack team. We did not use Botkit Studio.
 
+What I added to the original project:
+
+* skills/wapuu*.js - controller modules that listen for Slack events
+* wapuu/data*.js - text patterns, sayings, methods to render responses
+
+FYI, the file bot.js in the project root is kind of a module loader for botkit. It loads EVERY .js file in the /skills folder as a botkit controller module.
+
+There is a file .env that needs to be in the root folder. Thankfully, glitch does not publish this file to github since it contains secrets for Slack API and other services. This app needs the following set up.
+
+#######
+# slack app credentials
+clientId=<from Slack>
+clientSecret=<from Slack>
+studio_token=<not used, from howdy botkit studio if you decide to use>
+PORT=<not used>
+
+MONGO_URI=<mongodb URI to access db>
+# note: .env is a shell file so there can’t be spaces around =
+########
+
 Use the instructions below for setting up and configuring this botkit project.
 
 # Botkit Starter Kit for Slack Bots
