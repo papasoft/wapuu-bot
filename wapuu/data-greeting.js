@@ -148,7 +148,7 @@ var ambientWords = [
         ] 
     },
     { 
-        hear:   ['plugin', 'wordpress', 'b2'],
+        hear:   ['plugin', 'wordpress', 'b2', 'Automattic', 'jazz', 'saxophone'],
         reply:  [
             'Sometimes I imagine what _It\'s a Wonderful Life_ would have been like with Matt Mullenweg as the main character. Would publishing on the web be a miserable experience. Would I even exist? These things keep me awake at night.',
             'What if WordPress is preventing the singularity from destroying us and a future artificial general intelligence decided to send a killer robot assissin back to 2003 to prevent Matt Mullenweg from forking b2 and creating WordPress? Hmmm.',

@@ -79,28 +79,24 @@ module.exports = function(controller) {
     });
 */
     controller.hears(['food','breakfast', 'lunch', 'snack'], ['direct_message','direct_mention','mention'], function(bot, message) {
-        bot.reply(message, responses.helpFood());
+        bot.reply(message, responses.helpFood);
         
     });
 
-    greeting.words.forEach(g => {
-        controller.hears(g.hear, ['direct_message','direct_mention','mention'], function(bot, message) {
-            bot.reply(message, config.getRandom(g.reply));
-        });
+    controller.hears(['help','links', 'info'], ['direct_message','direct_mention','mention'], function(bot, message) {
+        bot.reply(message, responses.helpLinks);
+        
     });
 
-  /*
-
-    greeting.ambientWords.forEach(g => {
-        controller.hears(g.hear, ['ambient'], function(bot, message) {
-            bot.reply(message, config.getRandom(g.reply));
-        });
+    controller.hears(['schedule'], ['direct_message','direct_mention','mention'], function(bot, message) {
+        bot.reply(message, responses.helpSchedule);
+        
     });
-*/  
+  
     coffee.words.forEach(g => {
         controller.hears(g.hear, ['direct_message','direct_mention','mention','ambient'], function(bot, message) {
 
-            if (message.channel === config.channelCoffee) {
+            if (message.type !== 'ambient' || message.channel === config.channelCoffee) {
               bot.reply(message, 
               {
                 text: config.getRandom(g.reply) + '\n\n' + config.getRandom(g.gifs),
@@ -116,7 +112,19 @@ module.exports = function(controller) {
         });
     });
 
-    controller.hears(['thank', 'gracias', 'awesome', 'yay', 'merci', 'cute', 'adorable'], ['direct_message','direct_mention','mention'], function(bot, message) {
+    greeting.words.forEach(g => {
+        controller.hears(g.hear, ['direct_message','direct_mention','mention'], function(bot, message) {
+            bot.reply(message, config.getRandom(g.reply));
+        });
+    });
+
+    greeting.ambientWords.forEach(g => {
+        controller.hears(g.hear, ['ambient'], function(bot, message) {
+            bot.reply(message, config.getRandom(g.reply));
+        });
+    });
+
+    controller.hears(['thank', 'gracias', 'awesome', 'yay', 'merci', 'cute', 'adorable', 'good', 'nice'], ['direct_message','direct_mention','mention'], function(bot, message) {
         bot.api.reactions.add({
             name: 'heart',
             channel: message.channel,
