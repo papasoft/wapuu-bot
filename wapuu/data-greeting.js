@@ -121,7 +121,8 @@ var ambientWords = [
     { 
         hear:   ['pitbull', 'worldwide'],
         reply:  [
-            'https://i.imgflip.com/26fu41.jpg' // dale
+            'https://i.imgflip.com/26fu41.jpg', // dale
+            'https://media.giphy.com/media/frXACoBiUyJDiEMxq7/giphy.gif',
         ] 
     },
     { 
@@ -134,11 +135,17 @@ var ambientWords = [
         ] 
     },
     { 
-        hear:   ['swag'],
+        hear:   ['swag', 'wordcamp'],
         reply:  [
             'https://i.imgflip.com/26fx1f.jpg', // literally
             'https://i.imgflip.com/26g45n.jpg', // leo
-            'https://i.imgflip.com/26g4f5.jpg', // success kid
+            'https://i.imgflip.com/26mtb8.jpg',
+            'https://i.imgflip.com/26mtme.jpg',
+            'https://media.giphy.com/media/6aucUmKuDjJjq/giphy.gif',
+            'https://img.buzzfeed.com/buzzfeed-static/static/2015-05/6/13/enhanced/webdr12/anigif_enhanced-16249-1430933695-22.gif?downsize=800:*&output-format=auto&output-quality=auto',
+            'https://img.buzzfeed.com/buzzfeed-static/static/2015-05/6/16/enhanced/webdr10/anigif_enhanced-9957-1430943090-3.gif?downsize=800:*&output-format=auto&output-quality=auto',
+            'https://media.giphy.com/media/qMk38BQzfTKRq/giphy.gif'
+
         ] 
     },
     { 
@@ -148,19 +155,62 @@ var ambientWords = [
         ] 
     },
     { 
-        hear:   ['plugin', 'wordpress', 'b2', 'Automattic', 'jazz', 'saxophone'],
+        hear:   ['organizer', 'volunteer'],
         reply:  [
-            'Sometimes I imagine what _It\'s a Wonderful Life_ would have been like with Matt Mullenweg as the main character. Would publishing on the web be a miserable experience. Would I even exist? These things keep me awake at night.',
-            'What if WordPress is preventing the singularity from destroying us and a future artificial general intelligence decided to send a killer robot assissin back to 2003 to prevent Matt Mullenweg from forking b2 and creating WordPress? Hmmm.',
-            'Do plugins LITERALLY "plug in"',
-            'All my boys are like, "Bro, pero like is this bitcoin stuff legit?" and I\'m like "Nah, brah. Not until there\'s a WordPress plugin for it."',
-            'Aight. I\'m taking bids to build my wapuu bot plugin. Who\'s in?',
-            'Ever since WordPress auto-update came along I LITERALLY have like 20 hours of nothing to do all day.',
-            'All my girls are like, "Ay, that Matt dude is super hot. Pero, que cute!"',
-            'Supposably I heard that you can run WordPress ON A CLOUD bro!',
-            'You guys have to check out ma.tt, bro, how did he get a .tt domain? Is li.tt available?',
-            'It\'s 2018 and you are still not using HTTPS? Nah fam.',
-            'Dwayne Wade is back in the 305. It\'s like WordCamp Miami 2012 all over again. I still have my Heat logo WCMIA shirt!',
+            'https://i.imgflip.com/26ms0u.jpg', 
+        ] 
+    },  
+    { 
+        hear:   ['awesome'],
+        reply:  [
+            'https://i.imgflip.com/26mt7k.jpg',
+            'https://i.imgflip.com/26mtfl.jpg'
+        ] 
+    },  
+    { 
+        hear:   ['march madness'],
+        reply:  [
+            'https://media.giphy.com/media/57SRLJePX6SkQG77jj/giphy.gif'
+        ] 
+    },  
+    { 
+        hear:   ['javascript', 'react'],
+        reply:  [
+            'https://i.imgflip.com/2vyica.jpg', // yavascript
+        ] 
+    },
+    { 
+        hear:   ['theme', 'html', 'css'],
+        reply:  [
+            'https://i.imgflip.com/2vygu7.jpg',  // visual vs code
+            'https://i.imgflip.com/2vyl87.jpg', // 960px
+            'https://i.imgflip.com/2vyn2s.jpg', // tables
+        ] 
+    },
+    { 
+        hear:   ['plugin', 'plug-in', 'wordpress', 'b2', 'cms', 'web', 'content management'],
+        reply:  [
+            'https://i.imgflip.com/2vyhxy.jpg', // passwords
+            'https://i.imgflip.com/2vykuf.jpg', // wordpress all universes
+            'https://i.imgflip.com/2vyl87.jpg', // 960px
+            'https://i.imgflip.com/2vyllw.jpg', // speed
+            'https://i.imgflip.com/2vymmz.jpg', // clear cache
+            'https://i.imgflip.com/2vynbl.jpg', // splain        
+        ] 
+    },
+    { 
+        hear:   ['gutenberg', 'editor'],
+        reply:  [
+            'https://i.imgflip.com/2vyhmx.jpg',  // zuckerberg vader
+            'https://i.imgflip.com/2vyn5b.jpg', // chosen one
+        ] 
+    },
+    { 
+        hear:   ['beginner', 'newbie', 'noob'],
+        reply:  [
+            'https://i.imgflip.com/2vyhsf.jpg',  // plug it in
+            'https://i.imgflip.com/2vyp7y.jpg',  // wait that easy?
+            'https://i.imgflip.com/2vypo7.jpg',  // success beginners workshop
         ] 
     },
 ];
@@ -171,7 +221,19 @@ var miamigifs = [
   'https://i.imgflip.com/26fvu5.jpg', // yeah no
   'https://i.imgflip.com/26fw1k.jpg', //mission
   'https://i.imgflip.com/26fw6h.jpg', // guys
-  'https://i.imgflip.com/26fx1f.jpg' // literally
+  'https://i.imgflip.com/26fx1f.jpg', // literally
+  'https://media.giphy.com/media/zOpXgAWgeaTcI/giphy.gif', // scarface
+  'https://media.giphy.com/media/3oEjHQhBrpF92MyUrC/giphy.gif', //dwade
+  
+];
+
+var emoji = [
+  'heart',
+  'sunglasses',
+  'heart_eyes',
+  'wink',
+  'punch',
+  'coffee',
 ];
 
 module.exports = {
@@ -180,7 +242,7 @@ module.exports = {
     deliveryWords: deliveryWords,
   
     words: words,
-  
+    emoji: emoji,
     ambientWords: ambientWords
 
 };

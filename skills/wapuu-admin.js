@@ -27,27 +27,14 @@ var sessionTrackMap = {
 
 module.exports = function(controller) {
 
+/*
     controller.hears(['test'], 'direct_message', function(bot, message) {
       console.log(sessionTrackMap['5041'].name);
     });
   
-    // admin-announce 
-    // allow an admin to send a message to main channel from a DM with the bot
-    // message comes as if from the bot in the announceChannel
-
-    controller.hears(['admin-announce (.*)'], 'direct_message', function(bot, message) {
-        if (config.adminUsers.indexOf(message.user) === -1) {
-            return;
-        }
-        var msg = message.match[1];
-
-        // announceChannel is the channel to make announcement in, i.e., #general
-        bot.say({channel: config.channelAnnounce, text: msg});
-    });
         
     // admin-reset-schedule
     // fetch sessions from WP API and store in mongo db
-
     controller.hears(['^admin-reset-schedule'], 'direct_message', function(bot, message) {
 
         //if (!config.adminUsers.includes(message.event.user)) {
@@ -89,5 +76,5 @@ module.exports = function(controller) {
           }
       
     });
-    
+*/    
 };

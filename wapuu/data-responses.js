@@ -5,28 +5,32 @@ Formatted messages
 var moment = require('moment');
 
 var links = {
-  fridayBeginners: "https://2018.miami.wordcamp.org/friday-beginners/",
-  fridayEcommerce: "https://2018.miami.wordcamp.org/friday-e-commerce/",
-  fridayDevelopers: "https://2018.miami.wordcamp.org/friday-developers/",
-  saturdayGuide: "https://2018.miami.wordcamp.org/saturday/",
-  sundayGuide: "https://2018.miami.wordcamp.org/sunday/",
-  saturdayParty: "https://2018.miami.wordcamp.org/saturday-party/",
+  fridayBeginners: "https://2019.miami.wordcamp.org/guide-for-friday-march-15th-wordpress-beginners-workshop/",
+  fridayFreelancers: "https://2019.miami.wordcamp.org/guide-for-friday-march-15th-freelancers-workshop/",
+  fridayDevelopers: "https://2019.miami.wordcamp.org/guide-for-friday-march-15th-developers-workshop/",
+  saturdayGuide: "https://2019.miami.wordcamp.org/saturday/",
+  sundayGuide: "https://2019.miami.wordcamp.org/sunday/",
+  saturdayParty: "https://2019.miami.wordcamp.org/saturday-party/",
   googleMap: "https://goo.gl/maps/erK3PX5p4jo",
   googleMapThursday: "https://goo.gl/maps/wcKrae7Ubg52",
-  saturdayVenueMap: "https://2018.miami.wordcamp.org/files/2018/03/venue_map_sat-2-768x497.jpg",
-  sundayVenueMap: "https://2018.miami.wordcamp.org/files/2018/03/venue_map_sun-1-768x497.jpg",
-  fridayVenueMapBeginners: "https://2018.miami.wordcamp.org/files/2018/03/map2.jpg",
-  fridayVenueMap: "https://2018.miami.wordcamp.org/files/2018/03/map-1024x450.jpg",
-  parking: "http://go.fiu.edu/WCMIA-Parking",
-  kidsGuide: "https://2018.miami.wordcamp.org/kids/",
-  codeOfConduct: "https://2018.miami.wordcamp.org/code-of-conduct/",
-  schedule: "https://2018.miami.wordcamp.org/schedule/",
-  scheduleFriday: "https://2018.miami.wordcamp.org/schedule/#WP101",
-  scheduleSaturday: "https://2018.miami.wordcamp.org/schedule/#sat",
-  scheduleSundayBiz: "https://2018.miami.wordcamp.org/schedule/#sunbiz",
-  scheduleSundayUsers: "https://2018.miami.wordcamp.org/schedule/#user",
-  scheduleSundayJavascript: "https://2018.miami.wordcamp.org/schedule/#ljd",
-  wifi: "https://2018.miami.wordcamp.org/wifi/"
+  saturdayVenueMap: "https://2019.miami.wordcamp.org/files/2019/03/venue_map_sat-03-13-18.jpg",
+  sundayVenueMap: "https://2019.miami.wordcamp.org/files/2019/03/venuemap_sunday.jpg",
+  fridayVenueMap: "https://2019.miami.wordcamp.org/files/2019/03/venue_map_fri-updated-03-13-768x538.jpg",
+  kidsVenueMap: "https://2019.miami.wordcamp.org/files/2019/03/venue_map_sun-kids-bothdays-2-1024x663.jpg",
+  parking: "https://fiu.nupark.com/events/Events/Register/5de3bf3f-f416-43a8-8d4b-ae3e9a5dddd3",
+  kidsGuide: "https://2019.miami.wordcamp.org/kids/",
+  codeOfConduct: "https://2019.miami.wordcamp.org/code-of-conduct/",
+  schedule: "https://2019.miami.wordcamp.org/schedule/",
+  scheduleFriday: "https://2019.miami.wordcamp.org/schedule/#WP101",
+  scheduleFridayDev: "https://2019.miami.wordcamp.org/schedule/#devworkshop",
+  scheduleFridayFreelancers: "https://2019.miami.wordcamp.org/schedule/#freelanceworkshop",
+  scheduleSaturday: "https://2019.miami.wordcamp.org/schedule/#sat",
+  scheduleSundayBiz: "https://2019.miami.wordcamp.org/schedule/#sunbiz",
+  scheduleSundayUsers: "https://2019.miami.wordcamp.org/schedule/#user",
+  scheduleSundayJavascript: "https://2019.miami.wordcamp.org/schedule/#ljd",
+  wifi: "https://network.fiu.edu/#visitors",
+  food: "https://2019.miami.wordcamp.org/food/",
+  livestream: "https://2019.miami.wordcamp.org/live/"
 };
 
 function slackLink (link, text) {
@@ -46,26 +50,18 @@ function isSunday() {
   return (moment().subtract(4, 'hours').day() === 0);
 }
 
-var emergencyNotice = "*Due to Thursday’s bridge collapse, some entrances to FIU have been closed. "
-      + "Please view our " + slackLink('https://2018.miami.wordcamp.org/fiu-update/', 'FIU Update page ') + " for the latest directions on how to enter the campus. We will keep that page updated with the latest info.*\n\n";
-
 module.exports = {
 
     links: links,
   
     kidsReply: function () {
-        var mapLink = links.saturdayVenueMap;
-        if (isSunday()) {
-          mapLink = links.sundayVenueMap;
-        }  
-
         return {
           text: 
             "Read the " 
             + slackLink(links.kidsGuide,  'Kids Camp Guide') 
             + " for general info and schedule. "
-            + "Registration for Kids Camp is in the RB 120 Building shown on this "
-            + slackLink(mapLink,  'Venue Map') + ".",
+            + "All Kids Camp activities including registration are in PG6 Tech Station Building shown on this "
+            + slackLink(links.kidsVenueMap,  'Venue Map') + ".",
           unfurl_links: false,
           unfurl_media: false
         };
@@ -73,22 +69,19 @@ module.exports = {
 
     registrationReply: function () {
         var regText = "Registration on Friday is at each workshop. "
-        var mapText = "See the venue maps for " 
-                + slackLink(links.fridayVenueMapBeginners, 'Beginners Workshop (RB 120)')
-                + "or "
-                + slackLink(links.fridayVenueMap, 'E-commerce (CBC 155) and Developers Workshop (CBC 232)')
-                + "\nSat/Sun Registration is at the Help/Registration Desk. Green star on this "
-                + slackLink(links.saturdayVenueMap, 'Venue Map');
-
+        var mapText = "See the " 
+                + slackLink(links.fridayVenueMap, 'Friday Workshops Venue Map')
+                + " and register at your workshop location. ";
+      
         if (isSunday()) {
           // Sunday
-          regText = "Registration is at the Help/Registration Desk. Bring you Photo ID. Green star on this ";
+          regText = "Starting at 8:00am, bring your Photo ID and register at the Help/Registration Desk - Green star on this ";
           mapText = slackLink(links.sundayVenueMap, 'Venue Map')
+              + ".\n_Sunday registration only required for those who did not register on Saturday_.";
         } else if (isSaturday()) {
           // Saturday
-          regText = "Registration is at the Help/Registration Desk. Bring you Photo ID. Green star on this ";
-          mapText = slackLink(links.saturdayVenueMap, 'Venue Map')
-              + ". _Sunday registration only required for those who did not register on Saturday_.";
+          regText = "Starting at 8:00am, bring your Photo ID and register at the Help/Registration Desk - Green star on this ";
+          mapText = slackLink(links.saturdayVenueMap, 'Venue Map');
         }
 
       return {
@@ -98,14 +91,54 @@ module.exports = {
         };
     },
 
-    directionsReply: function () {
-            
-      var reply = "Here is a "
-        + slackLink(links.googleMap, 'Google map to FIU with directions')
-        + ". Remember to "
-        + slackLink(links.parking, 'register your vehicle here')
-        + " before coming to campus. ";
+    helpDirections: {
+        "attachments": [
+            {
+                "fallback": "WordCamp Miami Directions, Parking and Maps",
+                "pretext": "Ya tu sabes\n\nWordCamp Miami Location Info",
+                "title": "Google Map",
+                "title_link": links.googleMap,
+                "text": "Google Map to FIU with directions",
+                "color": "#0000ff"
+            },
+            {
+                "title": "Parking Registration",
+                "title_link": links.parking,
+                "text": "Register your vehicle here (once for the whole weekend)",
+                "color": "#32CD32"
+            },
+            {
+                "title": "Venue Map - Friday",
+                "title_link": links.fridayVenueMap,
+                "text": "Campus map with workshop locations",
+                "color": "#3CB371"
+            },
+            {
+                "title": "Venue Map - Saturday",
+                "title_link": links.saturdayVenueMap,
+                "text": "Campus map with Saturday registration and track locations",
+                "color": "#808000"
+            },
+            {
+                "title": "Venue Map - Sunday",
+                "title_link": links.sundayVenueMap,
+                "text": "Campus map with Sunday track locations",
+                "color": "#ffa500"
+            },
+            {
+                "title": "Venue Map - Kids Camp",
+                "title_link": links.kidsVenueMap,
+                "text": "Campus map with Kids Camp highlighted",
+                "color": "#D2691E"
+            },
 
+        ]
+    },
+
+    ticketsReply: function () {
+        var reply = "If you purchased a ticket, all you need to register is a Photo ID."
+                + "\n\n*Tickets are SOLD OUT for all of WordCamp Miami 2019 and refunds are no longer being issued.*"
+      
       return {
             text: reply,
             unfurl_links: false,
@@ -113,9 +146,10 @@ module.exports = {
         };
     },
 
-    ticketsReply: function () {
-        var reply = "If you purchased a ticket, all you need to register is a Photo ID."
-                + "\n\n*Tickets are SOLD OUT for all of WordCamp Miami 2018 and refunds are no longer being issued.*"
+    slidesReply: function () {
+        var reply = "Session slides will become available as we receive them from speakers and a *View Session Slides* link will appear on the page for that session " 
+            + slackLink(links.schedule, 'on our schedule.') + 
+            "\nAnother really good idea is to check the speaker's twitter feed. "
       
       return {
             text: reply,
@@ -125,7 +159,18 @@ module.exports = {
     },
 
     wifiReply: function () {
-        var reply = "Here are " + slackLink(links.wifi, 'WiFi instructions.')
+        var reply = "FIU has provided us access to their " + slackLink(links.wifi, 'Visitor WiFi network.') + " Follow those instructions, accept the terms and your are good for the whole day."
+              + '  D\u00e1le!';
+      
+      return {
+            text: reply,
+            unfurl_links: false,
+            unfurl_media: false
+        };
+    },
+
+    liveStreamReply: function () {
+        var reply = "Here are the " + slackLink(links.livestream, 'LIVE stream links.')
               + '  D\u00e1le!';
       
       return {
@@ -142,7 +187,7 @@ module.exports = {
                 "fallback": "Hey WordCamp Miami, what's up. I'm Wapuu Bot and I'm here to help you...supposably...or at least entertain you.",
                 "pretext": "Hey WordCamp Miami, what's up. I'm Wapuu Bot and I'm here to help you...supposably...or at least entertain you.",
                 "title": "I'll be in the following channels",
-                "text": "#general - responding to @wapuu mentions and ambient remarks\n#coffee - serving up caffeine-related gifs",
+                "text": "#general - responding to @wapuu mentions and ambient remarks\n#holawapuu - I am triple-shot caffeinated in this channel",
                 "color": "#7CD197"
             },
             {
@@ -181,27 +226,51 @@ module.exports = {
             {
                 "fallback": "WordCamp Miami Schedule Links",
                 "pretext": "Ya tu sabes\n\nWordCamp Miami Schedule Links (click the title)",
+                "title": "Full Schedule",
+                "title_link": links.schedule,
+                "text": "WordCamp Miami Full Schedule",
+                "color": "#0000ff"
+            },
+            {
+                "title": "Friday Beginners Workshop",
+                "title_link": links.scheduleFriday,
+                "text": "WordPress 101 Beginners Workshop (RB 120)",
+                "color": "#32CD32"
+            },
+            {
+                "title": "Friday Developers Workshop",
+                "title_link": links.scheduleFridayDev,
+                "text": "WordPress Freelancers Workshop (CBC 155)",
+                "color": "#3CB371"
+            },
+            {
+                "title": "Friday Freelancers Workshop",
+                "title_link": links.scheduleFridayFreelancers,
+                "text": "WordPress 101 Beginners Workshop (RB 120)",
+                "color": "#808000"
+            },
+            {
                 "title": "Saturday",
                 "title_link": links.scheduleSaturday,
-                "text": "How To (CBC 155)\nDesign & Community (RDB 1100)/nDeveloper (CBC 232)",
-                "color": "#800000"
+                "text": "WordPress & The Web (CBC 155)\nDesign & Community (CBC 233)\nDeveloper (ZEB 120)",
+                "color": "#ffa500"
             },
             {
                 "title": "Sunday - Business",
                 "title_link": links.scheduleSundayBiz,
-                "text": "Business/Micro-MBA (CBC 155)",
+                "text": "Business Track (CBC 1155)",
                 "color": "#ffa500"
             },
             {
-                "title": "Sunday - E-commerce & Users",
+                "title": "Sunday - WordPress Skills",
                 "title_link": links.scheduleSundayUsers,
-                "text": "E-Commerce & Users (CBC 232)",
+                "text": "Building WordPress Skills (RDB 1100)",
                 "color": "#D2691E"
             },
             {
                 "title": "Sunday - Javascript",
                 "title_link": links.scheduleSundayJavascript,
-                "text": "Learn Javascript Deeply (RDB 1100)",
+                "text": "Learn Javascript Deeply (ZEB 120)",
                 "color": "#ff00ff"
             },
 
@@ -211,32 +280,48 @@ module.exports = {
     helpFood: {
         "attachments": [
             {
-                "fallback": "WordCamp Miami 2018 Food Schedule",
+                "fallback": "WordCamp Miami Food Info",
                 "pretext": "Food. Pero que rrrrrico",
-                "title": "Saturday",
-                "text": "Morning - bagels, coffee, some fruit\n11:45am Lunch - BBQ chicken/ribs, salad, veg options\nAfternoon - CHURROS boi! + coffee\nAfter Party at Chili's",
+                "title": "WordCamp Miami Food Info",
+                "text": "Food info and menu options",
+                "title_link": links.food,
                 "color": "#ff00ff"
-            },
-            {
-                "title": "Sunday",
-                "text": "Morning - bagels, coffee, some fruit\n12:30pm Lunch - Pollo Tropical chicken/pork/veg, Nitro Ice cream after lunch\nAfternoon - coffee",
-                "color": "#ffa500"
             },
         ]
     },
     helpLinks: {
         "attachments": [
             {
-                "fallback": "WordCamp Miami 2018 Links",
-                "pretext": "Ya tu sabes\n\nWordCamp Miami 2018 Links",
+                "fallback": "WordCamp Miami Links",
+                "pretext": "Ya tu sabes\n\nWordCamp Miami Links",
                 "title": "Complete Schedule",
                 "title_link": links.schedule,
                 "color": "#7CD197"
             },
             {
+                "title": "Friday Beginners Workshop Guide",
+                "title_link": links.fridayBeginners,
+                "color": "#A52A2A"
+            },
+            {
+                "title": "Friday Developers Workshop Guide",
+                "title_link": links.fridayDevelopers,
+                "color": "#1E90FF"
+            },
+            {
+                "title": "Friday Freelancers Workshop Guide",
+                "title_link": links.fridayFreelancers,
+                "color": "#9370DB"
+            },
+            {
                 "title": "Saturday Guide",
                 "title_link": links.saturdayGuide,
                 "color": "#ffa500"
+            },
+            {
+                "title": "Saturday Party",
+                "title_link": links.saturdayParty,
+                "color": "#DB7093"
             },
             {
                 "title": "Sunday Guide",
