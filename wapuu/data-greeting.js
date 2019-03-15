@@ -21,7 +21,8 @@ var defaultResponses = [
   'Fu\u00e1cata!',
   'Bonjou',
   'M ap viv',
-  'Dasit'
+  'Dasit',
+  'Yeet!'
 ];
 
 var deliveryWords = [
@@ -42,7 +43,8 @@ var words = [
             'hello',
             'howdy',
             'what\s up',
-            'hey'
+            'hey',
+            'greetings'
         ],
         reply:  [
             'Wazzup!',
@@ -55,9 +57,7 @@ var words = [
     },
     { 
         hear:   [
-            'sak pase',
-            'ou ye',
-            'bonjou'
+            'sak pase', 'sak passe', 'bon jou', 'ou ye', 'bonjou'
         ],
         reply:  [
             'M\'ap boul\u00e9',
@@ -67,19 +67,20 @@ var words = [
     },
     { 
         hear:   [
-            '^yo', 'wazzup', 'boi', 'aight', 'whatup'
+            '^yo', 'wazzup', 'boi', 'aight', 'whatup', 'boy'
         ],
         reply:  [
             'Yo',
             'What up homie?',
             'Word',
             'Lit',
-            'Dasit'
+            'Dasit',
+            'Yeet!'
         ] 
     },
     { 
         hear:   [
-            'hola', 'que tal', 'que pasa', 'como le va', 'como va', 'como est'
+            'hola', 'que tal', 'que pasa', 'como le va', 'como va', 'como est', 'pasando'
         ],
         reply:  [
             'D\u00e1le!',
@@ -87,12 +88,13 @@ var words = [
             'Aqui en la lucha',
             'Ya tu sabes',
             'Fu\u00e1cata!',
-            'No es facil'
+            'No es facil',
+            'Az\u00facar!'
         ] 
     },
     { 
         hear:   [
-            'irie', 'wadup', 'gwaan', 'no problem'
+            'irie', 'wadup', 'gwaan', 'no problem', 'gwon'
         ],
         reply:  [
             'Irie',
@@ -130,12 +132,13 @@ var ambientWords = [
         reply:  [
             'https://i.imgflip.com/26fvu5.jpg', // yeah no
             'https://i.imgflip.com/26fxsc.jpg', // hialeah
-            'https://i.imgflip.com/26fw1k.jpg', //mission
             'https://i.imgflip.com/26fw6h.jpg', // guys
+            'https://i.imgflip.com/26fu41.jpg', // dale
+            'https://media.giphy.com/media/frXACoBiUyJDiEMxq7/giphy.gif',
         ] 
     },
     { 
-        hear:   ['swag', 'wordcamp'],
+        hear:   ['swag'],
         reply:  [
             'https://i.imgflip.com/26fx1f.jpg', // literally
             'https://i.imgflip.com/26g45n.jpg', // leo
@@ -159,7 +162,7 @@ var ambientWords = [
         reply:  [
             'https://i.imgflip.com/26ms0u.jpg', 
         ] 
-    },  
+    },
     { 
         hear:   ['awesome'],
         reply:  [
@@ -168,13 +171,7 @@ var ambientWords = [
         ] 
     },  
     { 
-        hear:   ['march madness'],
-        reply:  [
-            'https://media.giphy.com/media/57SRLJePX6SkQG77jj/giphy.gif'
-        ] 
-    },  
-    { 
-        hear:   ['javascript', 'react'],
+        hear:   ['react','javascript'],
         reply:  [
             'https://i.imgflip.com/2vyica.jpg', // yavascript
         ] 
@@ -185,10 +182,11 @@ var ambientWords = [
             'https://i.imgflip.com/2vygu7.jpg',  // visual vs code
             'https://i.imgflip.com/2vyl87.jpg', // 960px
             'https://i.imgflip.com/2vyn2s.jpg', // tables
+            'https://i.imgflip.com/26fw1k.jpg', //mission
         ] 
     },
     { 
-        hear:   ['plugin', 'plug-in', 'wordpress', 'b2', 'cms', 'web', 'content management'],
+        hear:   ['plugin', 'plug-in', 'b2', 'cms', 'wordpress'],
         reply:  [
             'https://i.imgflip.com/2vyhxy.jpg', // passwords
             'https://i.imgflip.com/2vykuf.jpg', // wordpress all universes
@@ -232,8 +230,11 @@ var emoji = [
   'sunglasses',
   'heart_eyes',
   'wink',
-  'punch',
+  'clap',
   'coffee',
+  'tada',
+  'star-struck',
+  'spock-hand'
 ];
 
 module.exports = {

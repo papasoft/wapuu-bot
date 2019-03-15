@@ -135,6 +135,18 @@ module.exports = {
         ]
     },
 
+    helpSlash: function () {
+        var reply = "Try using the /wapuu slash command to get help personal from me, Wapuu!" +
+            "\nTry `/wapuu help` or `/wapuu links` or `/wapuu schedule` or `/wapuu directions`"
+      
+      return {
+            text: reply,
+            unfurl_links: false,
+            unfurl_media: false
+        };
+    },
+
+
     ticketsReply: function () {
         var reply = "If you purchased a ticket, all you need to register is a Photo ID."
                 + "\n\n*Tickets are SOLD OUT for all of WordCamp Miami 2019 and refunds are no longer being issued.*"
@@ -187,13 +199,19 @@ module.exports = {
                 "fallback": "Hey WordCamp Miami, what's up. I'm Wapuu Bot and I'm here to help you...supposably...or at least entertain you.",
                 "pretext": "Hey WordCamp Miami, what's up. I'm Wapuu Bot and I'm here to help you...supposably...or at least entertain you.",
                 "title": "I'll be in the following channels",
-                "text": "#general - responding to @wapuu mentions and ambient remarks\n#holawapuu - I am triple-shot caffeinated in this channel",
+                "text": "#general - responding to @wapuu mentions and ambient remarks\n" + 
+              "<https://wcmiami.slack.com/messages/CGY59U78B|#holawapuu> - I am hyper-caffeinated in this channel",
                 "color": "#7CD197"
             },
             {
                 "title": "/wapuu help",
                 "text": "this help page",
                 "color": "#800000"
+            },
+            {
+                "title": "/wapuu friday  /wapuu saturday   /wapuu sunday",
+                "text": "Get help links relevant to a particular day",
+                "color": "#32CD32"
             },
             {
                 "title": "/wapuu food",
@@ -289,6 +307,114 @@ module.exports = {
             },
         ]
     },
+    helpFriday: {
+        "attachments": [
+            {
+                "fallback": "WordCamp Miami Friday Links",
+                "pretext": "D\u00e1le!\n\nWordCamp Miami Friday Links",
+                "title": "Friday Beginners Workshop Guide",
+                "title_link": links.fridayBeginners,
+                "color": "#A52A2A"
+            },
+            {
+                "title": "Friday Developers Workshop Guide",
+                "title_link": links.fridayDevelopers,
+                "color": "#1E90FF"
+            },
+            {
+                "title": "Friday Freelancers Workshop Guide",
+                "title_link": links.fridayFreelancers,
+                "color": "#9370DB"
+            },
+            {
+                "title": "Google Map with Directions",
+                "title_link": links.googleMap,
+                "color": "#0000ff"
+            },
+            {
+                "title": "Parking - Register Your Vehicle",
+                "title_link": links.parking,
+                "color": "#008B8B"
+            },
+            {
+                "title": "Venue Map - Friday",
+                "title_link": links.fridayVenueMap,
+                "color": "#f08080"
+            },
+        ]
+    },  
+    helpSaturday: {
+        "attachments": [
+            {
+                "fallback": "WordCamp Miami Saturday Links",
+                "pretext": "D\u00e1le!\n\nWordCamp Miami Saturday Links",
+                "title": "Saturday Guide",
+                "title_link": links.saturdayGuide,
+                "color": "#ffa500"
+            },
+            {
+                "title": "Google Map with Directions",
+                "title_link": links.googleMap,
+                "color": "#0000ff"
+            },
+            {
+                "title": "Parking - Register Your Vehicle",
+                "title_link": links.parking,
+                "color": "#008B8B"
+            },
+            {
+                "title": "Venue Map - Saturday",
+                "title_link": links.saturdayVenueMap,
+                "color": "#f08080"
+            },
+            {
+                "title": "Kids Camp Guide",
+                "title_link": links.kidsGuide,
+                "color": "#00ffff"
+            },
+            {
+                "title": "Live Video Stream",
+                "title_link": links.livestream,
+                "color": "#9370DB"
+            },
+            {
+                "title": "Saturday Party",
+                "title_link": links.saturdayParty,
+                "color": "#DB7093"
+            },
+        ]
+    },  
+    helpSunday: {
+        "attachments": [
+            {
+                "fallback": "WordCamp Miami Sunday Links",
+                "pretext": "D\u00e1le!\n\nWordCamp Miami Sunday Links",
+                "title": "Sunday Guide",
+                "title_link": links.sundayGuide,
+                "color": "#daa520"
+            },
+            {
+                "title": "Google Map with Directions",
+                "title_link": links.googleMap,
+                "color": "#0000ff"
+            },
+            {
+                "title": "Parking - Register Your Vehicle",
+                "title_link": links.parking,
+                "color": "#008B8B"
+            },
+            {
+                "title": "Venue Map - Sunday",
+                "title_link": links.sundayVenueMap,
+                "color": "#bc8f8f"
+            },
+            {
+                "title": "Live Video Stream",
+                "title_link": links.livestream,
+                "color": "#9370DB"
+            },
+        ]
+    },  
     helpLinks: {
         "attachments": [
             {
@@ -354,9 +480,9 @@ module.exports = {
                 "color": "#00ffff"
             },
             {
-                "title": "Code of Conduct",
-                "title_link": links.codeOfConduct,
-                "color": "#DA70D6"
+                "title": "Live Video Stream",
+                "title_link": links.livestream,
+                "color": "#00ffcc"
             },
         ]
     }};
